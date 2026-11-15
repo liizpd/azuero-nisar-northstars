@@ -244,6 +244,7 @@
       <a href="#radar">Radar</a>
       <a href="#compare">Before / After</a>
       <a href="#change">Change</a>
+      <a href="#fringes">Fingerprint</a>
       <a href="#why">Hypotheses</a>
       <a href="#next">Next</a>
     </nav>
@@ -393,41 +394,51 @@
     </div>
   </section>
 
-  <!-- ================= (OPCIONAL) INTERFEROGRAMA =================
-       Aparece solo si existe images/nisar-interferogram.png
-       ============================================================= -->
-  <section id="fringes" class="reveal" hidden>
-    <div class="label"><svg style="color:var(--aurora-1)"><use href="#northstar"/></svg>Bonus / The fingerprint</div>
+  <!-- ================= 05 INTERFEROGRAMA (GUNW) ================= -->
+  <section id="fringes" class="reveal">
+    <div class="label"><svg style="color:var(--aurora-1)"><use href="#northstar"/></svg>05 / The fingerprint</div>
     <h2>The earthquake, written in color</h2>
+    <p class="intro">An interferogram (NISAR GUNW product) does not show a single moment. It shows how the ground moved between two passes made only 12 days apart. Drag the star to compare a quiet period with the period that contains the earthquake.</p>
+
     <div class="viewer-wrap">
-      <div class="frame"><i class="c1"></i><i class="c2"></i>
-        <img src="images/nisar-interferogram.png" alt="NISAR interferogram, October 2 to October 14, 2026" style="border-radius:4px">
+      <div>
+        <div class="frame"><i class="c1"></i><i class="c2"></i>
+          <div class="compare" id="cmp-gunw">
+            <span class="tag l">SEP 20 → OCT 2</span><span class="tag r">OCT 2 → OCT 14</span>
+            <img src="images/nisar-gunw-before.png" alt="NISAR interferogram before the earthquake, September 20 to October 2, 2026">
+            <img class="after" src="images/nisar-gunw-quake.png" alt="NISAR interferogram including the earthquake, October 2 to October 14, 2026">
+            <input type="range" min="0" max="100" value="28" aria-label="Compare interferograms before and during the earthquake">
+            <div class="handle"><svg style="color:var(--star)"><use href="#northstar"/></svg></div>
+          </div>
+        </div>
+        <p class="muted" style="font-size:.88rem;margin-top:12px">One full cycle of colors ≈ 12 cm of ground motion toward or away from the satellite.</p>
       </div>
+
       <div class="reading">
-        <div><h4>What it is</h4><p>An interferogram (NISAR GUNW product) compares two passes only 12 days apart, October 2 and October 14. Each full cycle of colors represents about 12 centimeters of ground motion.</p></div>
-        <div><h4>What to look for</h4><p>Bands of color that crowd together near the fault. The tighter the bands, the more the ground moved.</p></div>
-        <div><h4>Why it matters</h4><p>With only 12 days between images, seasonal effects are minimal. What remains is the earthquake itself.</p></div>
+        <div><h4>What it is</h4><p>Each full cycle of colors, called a fringe, represents about 12 centimeters of ground motion toward or away from the satellite. Grainy areas are places where the radar could not compare both passes, such as open water.</p></div>
+        <div><h4>What to look for</h4><p>Before the earthquake, the bands are straight, parallel and evenly spaced: a smooth trend across the whole image, typical of the atmosphere or the satellite's orbit rather than real ground motion. After the earthquake, the bands bend, crowd together and curve around a single zone in the southwest of the image.</p></div>
+        <div><h4>Why it matters</h4><p>The shape of the bands tells the story. Straight, regular bands mean no localized movement; bands that converge around one zone reveal ground that truly moved. With only 12 days between passes, the rainy season barely plays a role: this is the signal of the earthquake.</p></div>
       </div>
     </div>
   </section>
 
   <!-- ================= 05 HIPÓTESIS ================= -->
   <section id="why" class="reveal">
-    <div class="label"><svg style="color:var(--aurora-1)"><use href="#northstar"/></svg>05 / Hypotheses</div>
+    <div class="label"><svg style="color:var(--aurora-1)"><use href="#northstar"/></svg>06 / Hypotheses</div>
     <h2>What could explain what we see?</h2>
-    <p class="intro">Radar responds to roughness and moisture. Between July and October, more than one thing changed on the surface of Azuero.</p>
+    <p class="intro">The interferogram shows that the earthquake moved the ground. But between July and October, more than the earthquake changed the surface of Azuero. Radar responds to roughness and moisture, so several drivers could explain the GCOV changes.</p>
     <ol class="drivers">
       <li><h3>The earthquake</h3><p>Thousands of landslides, cracks in the ground and damaged structures changed the roughness of entire hillsides, especially near the fault.</p></li>
       <li><h3>The rainy season</h3><p>October is one of the wettest months in Panama. Wet soil reflects more radar energy, which can turn large areas red without any shaking.</p></li>
       <li><h3>Vegetation and crops</h3><p>Plants grow, fields are harvested and pastures change between seasons, and each change alters the echo.</p></li>
       <li><h3>Viewing conditions</h3><p>Images taken from slightly different orbits or angles can show small differences that are not real changes on the ground.</p></li>
     </ol>
-    <div class="callout"><p><b>The next step:</b> separating these effects. Comparing passes only 12 days apart, or measuring ground motion with interferometry, isolates the signal of the earthquake from the changes of the season.</p></div>
+    <div class="callout"><p><b>Putting it together:</b> the GCOV images show <i>where</i> the surface changed; the GUNW interferogram shows <i>that</i> the earthquake moved the ground. Combining both, and repeating the analysis every 12 days, makes it possible to separate the earthquake from the season.</p></div>
   </section>
 
   <!-- ================= 06 QUÉ SIGUE ================= -->
   <section id="next" class="reveal">
-    <div class="label"><svg style="color:var(--aurora-1)"><use href="#northstar"/></svg>06 / What comes next</div>
+    <div class="label"><svg style="color:var(--aurora-1)"><use href="#northstar"/></svg>07 / What comes next</div>
     <h2>The dance continues</h2>
     <p class="intro">The shaking lasted less than a minute, but the surface of Azuero keeps changing. NISAR returns every 12 days, and every pass opens new questions.</p>
     <div class="orbit">
@@ -441,7 +452,7 @@
 
   <!-- ================= 07 MÉTODO ================= -->
   <section id="method" class="reveal">
-    <div class="label"><svg style="color:var(--aurora-1)"><use href="#northstar"/></svg>07 / How we did it</div>
+    <div class="label"><svg style="color:var(--aurora-1)"><use href="#northstar"/></svg>08 / How we did it</div>
     <h2>From orbit to insight</h2>
     <ol class="steps">
       <li><b>Search.</b> We defined an area of interest over the epicenter in NASA Earthdata and selected dates before and after the earthquake.</li>
@@ -449,6 +460,7 @@
       <li><b>Visualize.</b> In ArcGIS Pro, we displayed the Frequency A radar layer of each image with a stretched color scale.</li>
       <li><b>Compare.</b> We computed a change raster (Difference method) between both dates.</li>
       <li><b>Measure.</b> We extracted the statistics of the change for the northern and southern sectors of the peninsula.</li>
+      <li><b>Confirm.</b> In ASF Vertex, we located NISAR GUNW interferograms for two 12-day periods from the same orbit track: September 20 to October 2 (before) and October 2 to October 14 (including the earthquake).</li>
     </ol>
   </section>
 
@@ -462,7 +474,7 @@
     <ul>
       <li><a href="https://www.earthdata.nasa.gov/" target="_blank" rel="noopener">NASA Earthdata</a> · NASA-ISRO NISAR L-band products, distributed by the <a href="https://search.asf.alaska.edu/" target="_blank" rel="noopener">Alaska Satellite Facility (ASF DAAC)</a>.</li>
       <li><a href="https://nisar-docs.asf.alaska.edu/" target="_blank" rel="noopener">NISAR Data User Guide</a>, Alaska Satellite Facility.</li>
-      <li>Processing: Esri ArcGIS Pro. Basemap: Esri World Imagery.</li>
+      <li>Processing: Esri ArcGIS Pro. Basemaps: Esri World Imagery (GCOV views) and Mapbox via ASF Vertex (interferogram views).</li>
     </ul>
     <h3>The earthquake</h3>
     <ul>
@@ -535,14 +547,6 @@
     }), { threshold: .12 });
     document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-    // ---------- Sección opcional del interferograma ----------
-    const probe = new Image();
-    probe.onload = () => {
-      const s = document.getElementById("fringes"); s.hidden = false; io.observe(s);
-      const link = document.createElement("a"); link.href = "#fringes"; link.textContent = "Fingerprint";
-      document.querySelector(".topbar nav").insertBefore(link, document.querySelector('.topbar nav a[href="#why"]'));
-    };
-    probe.src = "images/nisar-interferogram.png";
   </script>
 </body>
 </html>
